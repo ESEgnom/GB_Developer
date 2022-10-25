@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson 4 Selection Sort Algorithm", "..\Lesson 4 Selection Sort Algorithm\Lesson 4 Selection Sort Algorithm.csproj", "{E0D9A123-FB91-4875-B18C-7C779EE7EFFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selection Sort Algorithm", "..\Selection Sort Algorithm\Selection Sort Algorithm.csproj", "{E0D9A123-FB91-4875-B18C-7C779EE7EFFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
