@@ -19,4 +19,4 @@ def find_distance(coord_x1, coord_y1, coord_x2, coord_y2):
 
 
 distance = find_distance(x1, y1, x2, y2)
-print(f'A({x1}, {y1}); B({x2}, {y2}) -> {round(distance, 3)}')
+print(f'A({x1}, {y1}); B({x2}, {y2}) -> {int(distance * 100) / 100}')
