@@ -30,3 +30,7 @@ def find_quarter(point_x, point_y):
 
 
 find_quarter(set_x_coordinates(), set_y_coordinates())
+
+a = input()
+d = {'1':'x>0 y>0', '2': 'x<0 y>0', '3': 'x<0 y<0', '4': 'x>0 y<0'}
+print(d[a])
