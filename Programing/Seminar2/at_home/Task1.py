@@ -7,12 +7,12 @@
 user_number = input('Введите число ')
 
 
-def summa(user_number):
-    if float(user_number) < 0:
-        user_number = float(user_number) * (-1)
+def summa(number):
+    if float(number) < 0:
+        number = float(number) * (-1)
     sum = 0
 
-    for i in str(user_number):
+    for i in str(number):
         if i != '.':
             sum += int(i)
     return sum
