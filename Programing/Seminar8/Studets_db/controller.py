@@ -5,10 +5,10 @@ import change_surname as cs
 import delete as dc
 import view_all as vac
 import export_in_file as eif
+import search as se
 
 
 def user_choice():
-
     choice_num = ui.menu()
     if choice_num < 0 or choice_num > 7:
         print('\nОшибка ввода!\n\nЧисло должно соответствовать пункту меню!\n')
@@ -22,11 +22,13 @@ def user_choice():
     elif choice_num == 3:
         cs.change_surname()
     elif choice_num == 4:
-        dc.delete()
+        se.search()
     elif choice_num == 5:
-        vac.view_all()
+        dc.delete()
     elif choice_num == 6:
-        eif.export_txt()
+        vac.view_all()
     elif choice_num == 7:
+        eif.export_txt()
+    elif choice_num == 8:
         print('\nСпасибо что пользовались нашим приложением!\n\nДо новых встреч!')
         exit()

@@ -12,7 +12,7 @@ def change_surname():
     with open(path_to_db, 'r', encoding='Windows-1251') as file:
         data = json.load(file)
         for i in range(0, len(data)):
-            if name == data[i]['Name'] or name == data[i]['Surname']:
+            if name == data[i]['Name'] or name == data[i]['Surname'] or name == data[i]['id']:
                 data[i]['Surname'] = input('Новая фамилия: ')
                 log.change_data_logger(data[i])
 

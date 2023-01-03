@@ -11,7 +11,7 @@ def change_phone_number():
     with open(path_to_db, 'r', encoding='Windows-1251') as file:
         data = json.load(file)
         for i in range(0, len(data)):
-            if name == data[i]['Name'] or name == data[i]['Surname']:
+            if name == data[i]['Name'] or name == data[i]['Surname'] or name == data[i]['id']:
                 data[i]['Phone number'] = input('Новый телефон: ')
                 log.change_data_logger(data[i])
 

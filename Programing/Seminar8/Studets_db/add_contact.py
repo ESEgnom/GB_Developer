@@ -12,12 +12,16 @@ def create_json():
 
 
 def add_to_json():
-    name = input("Введите имя: ")
+
+    name = input("Ввдите имя: ")
     surname = input('Введите Фамилию: ')
     phone = input('Введите номер телефона: ')
     e_mail = input('Введите адрес электронной почты: ')
     comment = input('Введите коментарий: ')
+    data = json.load(open("db.json"))
+
     json_data = {
+        "id": len(data) + 1,
         "Name": name,
         "Surname": surname,
         "Phone number": phone,
@@ -25,7 +29,7 @@ def add_to_json():
         "Comment": comment,
     }
     log.add_data_logger(json_data)
-    data = json.load(open("db.json"))
+
     data.append(json_data)
     with open("db.json", "w") as file:
         json.dump(data, file, indent=2, ensure_ascii=False)
