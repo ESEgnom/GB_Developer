@@ -1,0 +1,1 @@
+commands = '/help\n/game\n/Exchange_Rates'
