@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "Name": "Стас",
+    "Surname": "Ерыкалин ",
+    "Phone number": "+79378402309",
+    "E-mail": "gnomese89@gmail.com",
+    "Comment": "Студент"
+  },
+  {
+    "id": 2,
+    "Name": "Марагарита",
+    "Surname": "Ерыкалина",
+    "Phone number": "+79371646020",
+    "E-mail": "margofarttt@gmail.com",
+    "Comment": "Уже умеет"
+  },
+  {
+    "id": 3,
+    "Name": "Илья",
+    "Surname": "Ерыкалин",
+    "Phone number": "+79631542687",
+    "E-mail": "ilerst162014@gmail.com",
+    "Comment": "Учение 2Б класса"
+  },
+  {
+    "id": 4,
+    "Name": "Алексей",
+    "Surname": "Осташкин",
+    "Phone number": "+74955821636",
+    "E-mail": "astal@yandex.ru",
+    "Comment": "лох"
+  },
+  {
+    "id": 5,
+    "Name": "Чанг",
+    "Surname": "Шу",
+    "Phone number": "9",
+    "E-mail": "changshoo@gmail.com",
+    "Comment": "китаец"
+  }
+]
