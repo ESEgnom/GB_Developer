@@ -11,15 +11,16 @@ public class AtHomeLess1 {
         if(num == 1){
             return 1;
         }else{
-            int result = (num * (num + 1)) / 2;
-            return result;
+            return (num * (num + 1)) / 2;
         }
     }
     public static int getN(){
         Scanner scn = new Scanner(System.in);
         System.out.print("Введи натуальное число: ");
-        int num = scn.nextInt();
-        scn.close();
-        return num;
+        while (!scn.hasNextInt()){
+            System.out.print("Ввести нужно натуральное число: ");
+            scn.next();
+        }
+        return scn.nextInt();
     }
 }
