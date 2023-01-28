@@ -4,37 +4,25 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="gnome"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-01-24 02:07:00 "/>
-        <attribute name="created" value="Z25vbWU7REVTS1RPUC1OVlNUN05HOzIwMjMtMDEtMjQ7IjAxOjQxOjE3ICI7MjgzNQ=="/>
-        <attribute name="edited" value="Z25vbWU7REVTS1RPUC1OVlNUN05HOzIwMjMtMDEtMjQ7IjAyOjA3OjAwICI7NzsyOTQ0"/>
+        <attribute name="saved" value="2023-01-24 12:20:21 "/>
+        <attribute name="created" value="Z25vbWU7REVTS1RPUC1OVlNUN05HOzIwMjMtMDEtMjQ7IjEyOjA3OjE4ICI7Mjg0MA=="/>
+        <attribute name="edited" value="Z25vbWU7REVTS1RPUC1OVlNUN05HOzIwMjMtMDEtMjQ7IjEyOjIwOjIxICI7MjsyOTM4"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <output expression="findTriangleNum(getN())" newline="True"/>
-        </body>
-    </function>
-    <function name="findTriangleNum" type="Integer" variable="result">
-        <parameters>
-            <parameter name="n" type="Integer" array="False"/>
-        </parameters>
-        <body>
-            <declare name="result" type="Integer" array="False" size=""/>
-            <if expression="n=1">
-                <then>
-                    <assign variable="result" expression="1"/>
-                </then>
-                <else>
-                    <assign variable="result" expression="(n*(n+1))/2"/>
-                </else>
-            </if>
-        </body>
-    </function>
-    <function name="getN" type="Integer" variable="n">
-        <parameters/>
-        <body>
             <declare name="n" type="Integer" array="False" size=""/>
             <input variable="n"/>
+            <if expression="n = 1">
+                <then>
+                    <output expression="1" newline="True"/>
+                </then>
+                <else>
+                    <declare name="result" type="Integer" array="False" size=""/>
+                    <assign variable="result" expression="(n*(n+1))/2"/>
+                    <output expression="result" newline="True"/>
+                </else>
+            </if>
         </body>
     </function>
 </flowgorithm>
