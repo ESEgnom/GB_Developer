@@ -371,7 +371,6 @@ FodyWeavers.xsd
 
 # globs
 Makefile.in
-*.userprefs
 *.usertasks
 config.make
 config.status
@@ -442,6 +441,9 @@ $RECYCLE.BIN/
 
 # JetBrains Rider
 .idea/
+.out/
+.src
+*.iml
 *.sln.iml
 
 ##
@@ -453,5 +455,6 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 /.vscode
+
 
 
