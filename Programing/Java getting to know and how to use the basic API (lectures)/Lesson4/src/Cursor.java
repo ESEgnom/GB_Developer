@@ -16,10 +16,9 @@ import java.util.Scanner;
  *  *  *  * если ход возможен записывает в ячейку "поля" номер следующего шага.
  */
 public class Cursor {
-
+    private final Queue<Integer> moves = new LinkedList<>();
     public void findWays(int[] field) {
-        Queue<Integer> moves = new LinkedList<>();
-       int startPoint = getStartPoint();
+        int startPoint = getStartPoint();
         moves.add(startPoint);
 
         field[startPoint] = 1;
@@ -42,7 +41,7 @@ public class Cursor {
         }
     }
 
-    public static int getStartPoint() {
+    private int getStartPoint() {
         Scanner scn = new Scanner(System.in);
         System.out.println("Введи точку с которой хочешь стартовать (число 0 - 99)");
         int startPoint = scn.nextInt();
@@ -50,14 +49,14 @@ public class Cursor {
         return startPoint;
     }
 
-    public static void stepUp(int[] field, Queue moves, int move, int nextPoint){
+    private void stepUp(int[] field, Queue moves, int move, int nextPoint){
         if (move - 10 >= 0 && field[move - 10] == 0) {
             field[move - 10] = nextPoint;
             moves.add(move - 10);
         }
     }
 
-    public static void stepLeft(int[] field, Queue moves, int move, int nextPoint){
+    private void stepLeft(int[] field, Queue moves, int move, int nextPoint){
         if (move - 1 >= 0 && field[move - 1] == 0) {
             switch (move - 1){
                 case 9, 19, 29, 39, 49, 59, 69, 79, 89:
@@ -69,19 +68,44 @@ public class Cursor {
         }
     }
 
-    public static void stepRight(int[] field, Queue moves, int move, int nextPoint){
+    private void stepRight(int[] field, Queue moves, int move, int nextPoint){
         if (move + 1 <= 99 && field[move + 1] == 0) {
             field[move + 1] = nextPoint;
             moves.add(move + 1);
         }
     }
 
-    public static void stepDown(int[] field, Queue moves, int move, int nextPoint){
+    private void stepDown(int[] field, Queue moves, int move, int nextPoint){
         if (move + 10 <= 99 && field[move + 10] == 0) {
             field[move + 10] = nextPoint;
             moves.add(move + 10);
         }
     }
+
+    public void findShortestWay(int[] field, int finishPoint){
+        int count = finishPoint;
+        while (field[count] != 1){
+            if(field[count - 10] == field[count] -1){
+                field[count] = count;
+                count -= 10;
+                moves.add(count);
+            } else if (field[count + 10] == field[count] - 1) {
+                field[count] = count;
+                count += 10;
+                moves.add(count);
+            } else if (field[count - 1] == field[count] - 1) {
+                field[count] = count;
+                count -= 1;
+                moves.add(count);
+            } else if (field[count + 1] == field[count] - 1) {
+                field[count] = count;
+                count += 1;
+                moves.add(count);
+            }
+        }
+        System.out.printf("кратчайший путь %s\n", moves);
+    }
+
 
 
 
