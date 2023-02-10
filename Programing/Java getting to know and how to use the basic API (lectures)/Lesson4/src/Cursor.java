@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 /**
  * Класс реализует курсор.
- * @Методы: {@link #findWays(int[])} - Просчитывает возможные пути.
- * @* {@link #getStartPoint()} - Запрашивает у пользователя ввод в консоль стартовой координаты в виде целого положительного числа 0 - 99
+ * @Методы: {@link #findWays(int)} - Просчитывает возможные пути.
  * @* {@link #stepUp(int[], Queue, int, int)} - Реализует проверку на возможность сделать ход в верх,
  * если ход возможен записывает в ячейку "поля" номер следующего шага.
  * @* {@link #stepLeft(int[], Queue, int, int)} - Реализует проверку на возможность сделать ход влево,
@@ -16,9 +15,15 @@ import java.util.Scanner;
  *  *  *  * если ход возможен записывает в ячейку "поля" номер следующего шага.
  */
 public class Cursor {
-    private final Queue<Integer> moves = new LinkedList<>();
-    public void findWays(int[] field) {
-        int startPoint = getStartPoint();
+    int[] field;
+
+    public Cursor(int[] field) {
+        this.field = field;
+    }
+
+
+    public void findWays(int startPoint) {
+        Queue<Integer> moves = new LinkedList<>();
         moves.add(startPoint);
 
         field[startPoint] = 1;
@@ -41,13 +46,6 @@ public class Cursor {
         }
     }
 
-    private int getStartPoint() {
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Введи точку с которой хочешь стартовать (число 0 - 99)");
-        int startPoint = scn.nextInt();
-        scn.close();
-        return startPoint;
-    }
 
     private void stepUp(int[] field, Queue moves, int move, int nextPoint){
         if (move - 10 >= 0 && field[move - 10] == 0) {
@@ -82,33 +80,29 @@ public class Cursor {
         }
     }
 
-    public void findShortestWay(int[] field, int finishPoint){
+    public void findShortestWay(int finishPoint){
+        Queue<Integer> moves = new LinkedList<>();
         int count = finishPoint;
         while (field[count] != 1){
-            if(field[count - 10] == field[count] -1){
-                field[count] = count;
+            if(count - 10 >= 0 && field[count - 10] == field[count] -1){
+                field[count] = -3;
                 count -= 10;
                 moves.add(count);
-            } else if (field[count + 10] == field[count] - 1) {
-                field[count] = count;
+            } else if (count + 10 <= 99 && field[count + 10] == field[count] - 1) {
+                field[count] = -3;
                 count += 10;
                 moves.add(count);
-            } else if (field[count - 1] == field[count] - 1) {
-                field[count] = count;
+            } else if (count - 1 >= 0 && field[count - 1] == field[count] - 1) {
+                field[count] = -3;
                 count -= 1;
                 moves.add(count);
-            } else if (field[count + 1] == field[count] - 1) {
-                field[count] = count;
+            } else if (count + 10 <= 99 && field[count + 1] == field[count] - 1) {
+                field[count] = -3;
                 count += 1;
                 moves.add(count);
             }
         }
+        field[finishPoint] = -2;
         System.out.printf("кратчайший путь %s\n", moves);
     }
-
-
-
-
-
-
 }

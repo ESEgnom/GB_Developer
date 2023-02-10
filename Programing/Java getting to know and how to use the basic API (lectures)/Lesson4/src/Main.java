@@ -1,13 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        Field field = new Field();
-        Cursor cursor = new Cursor();
-        int[] newField = field.createField();
-        field.showField(newField);
-        int finishPoint = field.getFinishPoint(newField);
-        cursor.findWays(newField);
-        field.showField(newField);
-        cursor.findShortestWay(newField, finishPoint);
-        field.showField(newField);
+        Point startP = new Point(1);
+        Point finishP = new Point(86);
+
+        FieldGenerator fg = new FieldGenerator();
+        FieldPrinter fieldPrinter = new FieldPrinter();
+
+        fg.setStartPoint(startP);
+        int[] field = fg.getField();
+        Cursor cursor = new Cursor(field);
+        System.out.println(fieldPrinter.showField(field, finishP.getCoordPoint()));
+
+        cursor.findWays(startP.getCoordPoint());
+        cursor.findShortestWay(finishP.getCoordPoint());
+        System.out.println(fieldPrinter.showField(field, finishP.getCoordPoint()));
+
+
+
     }
 }
