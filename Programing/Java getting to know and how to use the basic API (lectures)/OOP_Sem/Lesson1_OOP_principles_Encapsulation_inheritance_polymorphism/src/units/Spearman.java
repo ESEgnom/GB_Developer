@@ -9,4 +9,12 @@ public class Spearman extends Unit{
         String msg = "%s ударил копьем %s. %s";
         return String.format(msg, super.getName(), unit.getName(), super.makeDamage(unit));
     }
+    @Override
+    public String getInfo(){
+        return String.format("Я, Копейщик %s", this.getName());
+    }
+    @Override
+    public String step(){
+        return "Сделал шаг";
+    }
 }

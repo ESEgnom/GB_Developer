@@ -20,4 +20,13 @@ public class Crossbowman extends Unit{
         }
     }
 
+    @Override
+    public String getInfo(){
+        return String.format("Я, Арбалетчик %s", this.getName());
+    }
+    @Override
+    public String step(){
+        return "Сделал шаг";
+    }
+
 }
