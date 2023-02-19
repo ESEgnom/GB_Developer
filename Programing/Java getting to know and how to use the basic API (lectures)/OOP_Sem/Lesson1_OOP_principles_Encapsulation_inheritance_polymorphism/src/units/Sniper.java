@@ -17,4 +17,12 @@ public class Sniper extends Unit{
             return String.format(msg, super.getName(), unit.getName(), super.makeDamage(unit));
         }
     }
+    @Override
+    public String getInfo(){
+        return String.format("Я, Лучник %s", this.getName());
+    }
+    @Override
+    public String step(){
+        return "Сделал шаг";
+    }
 }

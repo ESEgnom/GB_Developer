@@ -1,6 +1,6 @@
 package units;
 
-public abstract class Unit {
+public abstract class Unit implements Info{
     private String name;
     private int atack;
     private int hitPoints;
@@ -17,12 +17,10 @@ public abstract class Unit {
         this.atack = atack;
     }
 
-
     public String makeDamage(Unit unit) {
         unit.takeDamage(this);
         return String.format("%s наносит удар %s", name, unit.name);
     }
-
 
     private String takeDamage(Unit unit) {
         String msgLoseGHealth = "%s теряет %s едениц здоровья";
@@ -48,6 +46,7 @@ public abstract class Unit {
         }
 
     }
+
     public int getAtack() {
         return atack;
     }
